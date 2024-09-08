@@ -2,20 +2,7 @@ import { React, useState } from 'react'
 import CarouselBullets from '../../../utils/CarouselBullets'
 import Button from '../../../utils/Button'
 
-const heroInfo = [
-  {
-    heading: 'Organic fresh fruits for your health',
-    subHeading:
-      'Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eleifend sagittis mollis. Nulla finibus arcu eu tortor gravida aliquet',
-    imageURL: 'images/hero/slider-1.webp',
-  },
-  {
-    heading: 'Organic fresh fruits for your health',
-    subHeading:
-      'Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris eleifend sagittis mollis. Nulla finibus arcu eu tortor gravida aliquet',
-    imageURL: 'images/hero/slider-2.webp',
-  },
-]
+import { heroInfo } from '../../../constants/data'
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)

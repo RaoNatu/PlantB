@@ -1,18 +1,7 @@
 import React from 'react'
 import BannerContent from './BannerContent'
 
-const bannerContents = [
-  {
-    imageURL: 'images/banner/1.webp',
-    sale: 'hot sale 30%',
-    heading: 'hanging pots & plants',
-  },
-  {
-    imageURL: 'images/banner/1.webp',
-    sale: 'hot sale 30%',
-    heading: 'hanging pots & plants',
-  },
-]
+import { bannerContents } from '../../../constants/data'
 
 const Banner2 = () => {
   return (

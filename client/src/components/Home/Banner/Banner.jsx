@@ -2,22 +2,7 @@ import React, { useState } from 'react'
 import Button from '../../../utils/Button'
 import DeliveryInfo from './DeliveryInfo'
 
-const section1Info = [
-  {
-    imageURL: 'images/plants-group/1.webp',
-    topHeading: 'New collection',
-    mainHeading: 'Fall/summer terrariums',
-    subHeading:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Ipsum is that it has a more-or-less normal dist...',
-  },
-  {
-    imageURL: 'images/plants-group/2.webp',
-    topHeading: 'Just for you',
-    mainHeading: 'Assorted snake air plant',
-    subHeading:
-      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Ipsum is that it has a more-or-less normal dist...',
-  },
-]
+import { section1Info  } from '../../../constants/data'
 
 const Section1 = () => {
   return (

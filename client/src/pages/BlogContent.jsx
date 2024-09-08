@@ -40,7 +40,7 @@ const BlogContent = () => {
       <Navbar />
       <section className="custom-container py-16">
         <BreadCrumbs crumbs={crumbs} />
-        <BlogsContent blogInfo={blogInfo} />
+        <BlogsContent blogInfo={blogInfo} blogId={id}/>
       </section>
       <Footer />
     </>

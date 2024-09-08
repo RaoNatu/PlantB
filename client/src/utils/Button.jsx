@@ -4,6 +4,7 @@ const buttonStyles = {
   primary: 'bg-themeColor text-white hover:bg-black uppercase rounded-xl',
   secondary: 'bg-white text-themeColor border-[1px] border-themeColor hover:bg-themeColor hover:text-white uppercase rounded-xl',
   tertiary: 'bg-white text-black border-[1px] border-dashed border-themeColor hover:text-white hover:bg-themeColor rounded-xl',
+  buyButton: 'bg-white text-black border-[1px] border-black hover:bg-black hover:text-white',
   plantSize: 'border-[1px] border-gray-200 text-black rounded-md',
   form: 'bg-themeColor text-white hover:bg-black rounded-lg',
 }

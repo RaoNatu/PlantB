@@ -9,6 +9,7 @@ const authenticationToken = (req, res, next) => {
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
+      console.log('Please ReLogin!')
       return res.status(403)
     }
 

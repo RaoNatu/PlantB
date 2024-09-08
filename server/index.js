@@ -5,6 +5,9 @@ const bcrypt = require('bcryptjs')
 const cors = require('cors')
 const User = require('./models/User')
 const Blog = require('./models/Blog')
+const BlogComment = require('./models/BlogComment')
+const Product = require('./models/Product')
+const Cart = require('./models/CartSchema')
 const authenticationToken = require('./middlewares/authenticationToken')
 require('dotenv').config()
 
@@ -106,6 +109,75 @@ app.get('/api/blog/:id', async (req, res) => {
   } catch (error) {
     console.log(error)
     res.status(500).send('Server Error')
+  }
+})
+
+app.post('/api/blog/:id/comments', authenticationToken, async (req, res) => {
+  try {
+    console.log(req.body)
+    const blogId = req.params.id
+    const { content } = req.body
+
+    const user = await User.findOne({ _id: req.user.userID })
+    const name = user.first_name
+    const email = user.email
+
+    const newBlogComment = new BlogComment({
+      blogId,
+      name,
+      email,
+      content,
+    })
+
+    await newBlogComment.save()
+    res.status(200).json(newBlogComment)
+  } catch (error) {
+    console.error('Error Occured!', error)
+  }
+})
+
+app.get('/api/blog/:id/comments', async (req, res) => {
+  const blogId = req.params.id
+  const comments = await BlogComment.find({ blogId })
+  if (!comments) {
+    res.status(404).send('Comments not found!')
+  }
+
+  res.status(200).json({ comments })
+})
+
+app.get('/api/products', async (req, res) => {
+  const products = await Product.find({})
+  res.status(200).json({ products })
+})
+
+app.post('/api/cart', authenticationToken, async (req, res) => {
+  const { productId, quantity } = req.body
+  const userId = req.user.userID
+  console.log(productId, quantity)
+
+  try {
+    let cart = await Cart.findOne({ userId })
+    if (cart) {
+      const itemIndex = cart.items.findIndex(
+        (item) => item.productId.toString() === productId
+      )
+
+      if (itemIndex > -1) {
+        cart.items[itemIndex].quantity += quantity
+      } else {
+        cart.items.push({ productId, quantity })
+      }
+    } else {
+      cart = new Cart({
+        userId,
+        items: [{ productId, quantity }],
+      })
+    }
+    await cart.save()
+    res.json(cart)
+  } catch (error) {
+    console.error(error)
   }
 })
 

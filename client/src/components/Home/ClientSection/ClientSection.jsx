@@ -2,43 +2,7 @@ import React, { useState } from 'react'
 import ClientCard from './ClientCard'
 import CarouselBullets from '../../../utils/CarouselBullets'
 
-const clientInfo = [
-  {
-    imageURL: '/images/client/1.webp',
-    feedback:
-      'Sed elit quam, iaculis sed semper sit amet udin vitae nibh. at magna akal akalsemorpe elit akalsemo the semper iaculis...',
-    name: 'Mr. John Deo',
-    designation: 'Designer',
-  },
-  {
-    imageURL: '/images/client/2.webp',
-    feedback:
-      'Sed elit quam, iaculis sed semper sit amet udin vitae nibh. at magna akal akalsemorpe elit akalsemo the semper iaculis...',
-    name: 'Mr. Onsequat',
-    designation: 'Developer',
-  },
-  {
-    imageURL: '/images/client/3.avif',
-    feedback:
-      'Sed elit quam, iaculis sed semper sit amet udin vitae nibh. at magna akal akalsemorpe elit akalsemo the semper iaculis...',
-    name: 'Mr. John Deo',
-    designation: 'Designer',
-  },
-  {
-    imageURL: '/images/client/1.webp',
-    feedback:
-      'Sed elit quam, iaculis sed semper sit amet udin vitae nibh. at magna akal akalsemorpe elit akalsemo the semper iaculis...',
-    name: 'Mr. John Deo',
-    designation: 'Designer',
-  },
-  {
-    imageURL: '/images/client/2.webp',
-    feedback:
-      'Sed elit quam, iaculis sed semper sit amet udin vitae nibh. at magna akal akalsemorpe elit akalsemo the semper iaculis...',
-    name: 'Mr. John Deo',
-    designation: 'Devloper',
-  },
-]
+import { clientInfo } from '../../../constants/data' 
 
 const ClientSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0)

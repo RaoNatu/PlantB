@@ -1,37 +1,6 @@
 import React from 'react'
 
-const partnerInfo = [
-  {
-    imageURL: '/images/partner/1.webp',
-  },
-  {
-    imageURL: '/images/partner/2.webp',
-  },
-  {
-    imageURL: '/images/partner/3.webp',
-  },
-  {
-    imageURL: '/images/partner/4.webp',
-  },
-  {
-    imageURL: '/images/partner/5.webp',
-  },
-  {
-    imageURL: '/images/partner/1.webp',
-  },
-  {
-    imageURL: '/images/partner/2.webp',
-  },
-  {
-    imageURL: '/images/partner/3.webp',
-  },
-  {
-    imageURL: '/images/partner/4.webp',
-  },
-  {
-    imageURL: '/images/partner/5.webp',
-  },
-]
+import { partnerInfo } from '../../../constants/data'
 
 const Partners = () => {
   return (

@@ -2,17 +2,7 @@ import React from 'react'
 import CategoryLeftMenu from './CategoryLeftMenu'
 import CategoryRightMenu from './CategoryRightMenu'
 
-const leftMenu = [
-  {name: 'fresh fruits'},
-  {name: 'bonsail plant'},
-  {name: 'botanical'},
-  {name: 'office plant'},
-  {name: 'organic'},
-  {name: 'seasonal plants'},
-  {name: 'spacial plants'},
-  {name: 'vegetable'},
-  {name: 'latest'},
-]
+import { leftMenu } from '../../../constants/data'
 
 const Category = () => {
   return (

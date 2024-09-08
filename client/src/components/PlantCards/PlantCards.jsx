@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import CardHover from './CardHover'
 import CardInfo from './CardInfo'
+import axios from 'axios'
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -28,6 +30,21 @@ const PlantCards = ({productsInfo, products, rating}) => {
     }
   }
 
+  const addToCart = async (productInfo, itemNumber) => {
+
+    const token = localStorage.getItem('token')
+
+    const request = await axios.post(`http://localhost:3000/api/cart`, {
+      productId: productInfo._id,
+      quantity: itemNumber
+    }, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    console.log(request.data)
+  }
+
   return (
     <div className="overflow-hidden">
       <div
@@ -50,7 +67,7 @@ const PlantCards = ({productsInfo, products, rating}) => {
               <Link to={_.plantInfo.link}>
                 <img src={_.imageURL} alt="product-img" />
               </Link>
-              <CardHover hoveredIndex={hoveredIndex === index} />
+              <CardHover hoveredIndex={hoveredIndex === index} productInfo={_} addToCart={addToCart}/>
             </div>
             <CardInfo plantInfo={_.plantInfo} rating={rating} />
           </div>
