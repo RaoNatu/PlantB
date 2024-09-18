@@ -11,7 +11,7 @@ const Cart = require('./models/CartSchema')
 const authenticationToken = require('./middlewares/authenticationToken')
 require('dotenv').config()
 
-const JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET = process.env.JWT_SECRET 
 const PORT = process.env.PORT
 const DB_URL = process.env.DB_URL
 
